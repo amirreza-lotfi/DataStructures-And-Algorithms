@@ -4,3 +4,6 @@ With the Java programming language, famous data structures and algorithms in sof
 1- <b>Heap<b/>  <br/>
 2- <b>Graph<b/><br/>
 3- <b>BinaryTree<b/><br/>
+
+<b>Available Algorithms<b/>:<br/>
+1 - <b>BackTracking<b/>
