@@ -31,6 +31,10 @@ public class BinaryTree {
         levelOrderTraversalWithQueue(root);
     }
 
+    /***
+     * Time Complexity : All node in tree traversal one time.
+     *                  so the time complexity is O(n)
+     ***/
     private int height(Node node){
         if (node == null)
             return 0;
@@ -40,6 +44,11 @@ public class BinaryTree {
             return Math.max(heightRight,heightLeft)+1;
         }
     }
+
+    /***
+     * Time Complexity : All node in tree traversal one time.
+     *                  so the time complexity is O(n)
+     ***/
     private void inOrderTraversal(Node node){             //left root right
         if(node!=null){
             inOrderTraversal(node.left);
@@ -47,6 +56,11 @@ public class BinaryTree {
             inOrderTraversal(node.right);
         }
     }
+
+    /***
+     * Time Complexity : All node in tree traversal one time.
+     *                  so the time complexity is O(n)
+     ***/
     private void preOrderTraversal(Node node){            //root left right
         if(node!=null){
             System.out.print(node.data+" ");
@@ -54,6 +68,11 @@ public class BinaryTree {
             inOrderTraversal(node.right);
         }
     }
+
+    /***
+     * Time Complexity : All node in tree traversal one time.
+     *                  so the time complexity is O(n)
+     ***/
     private void postOrderTraversal(Node node){            //left right root
         if(node!=null){
             System.out.print(node.data+" ");
@@ -61,6 +80,11 @@ public class BinaryTree {
             inOrderTraversal(node.right);
         }
     }
+
+    /***
+     * Time Complexity : All node in tree traversal one time.
+     *                  so the time complexity is O(n)
+     ***/
     private void levelOrderTraversal(Node node){
         // T(n) = O(n^2)
 
@@ -68,6 +92,7 @@ public class BinaryTree {
         for(int i=1;i<=rootHeight;++i)
             printCurrentLevel(root,i);
     }
+    
     private void printCurrentLevel(Node node,int level){
         if (node!=null){
             if (level == 1)
@@ -94,10 +119,7 @@ public class BinaryTree {
                 queue.add(rightOfFront);
                 System.out.print(rightOfFront.data+'\n');
             }
-
-
             queue.remove();
-
         }
     }
 
