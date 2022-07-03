@@ -92,7 +92,7 @@ public class BinaryTree {
         for(int i=1;i<=rootHeight;++i)
             printCurrentLevel(root,i);
     }
-    
+
     private void printCurrentLevel(Node node,int level){
         if (node!=null){
             if (level == 1)
