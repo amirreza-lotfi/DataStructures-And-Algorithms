@@ -2,7 +2,6 @@ package data_structure.binary_tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.*
 
 public class BinaryTree {
     public Node root;
