@@ -1,4 +1,4 @@
-# DataStructues And Algorithms
+# DataStructures And Algorithms
 With the Java programming language, famous data structures and algorithms in software engineering will be implemented in this reposotiry. <br/><br/>
 <b>Available Data Structures</b>:<br/>
 1- <b>Heap<b/>  <br/>
