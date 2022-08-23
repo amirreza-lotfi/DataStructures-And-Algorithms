@@ -4,9 +4,10 @@ public class SelectionSort implements Sorting {
 
     /**
      * In Selection sort, array separates two part; sorted section and unsorted section.
-     * Selection sort has 3 steps:
-     *      1- finding index of minimum value
-     *      2- swap index of minimum value after currentPosition(init = 0) with currentPosition in array.
+     * Selection sort has 3 steps :
+     *
+     *      1- finding index of minimum value that its index is bigger that currentPosition(init = 0)
+     *      2- swap it for currentPosition in array.
      *      3- currentPosition +=1
      *
      * Time Complexity : O(N^2)
@@ -21,7 +22,7 @@ public class SelectionSort implements Sorting {
         int[] result = initialList.clone();
 
         for(int currentPosition = 0;currentPosition < result.length; currentPosition++) {
-            int minimum = minimumValueIndex(result,currentPosition);
+            int minimum = findIndexOfMinimumValue(result,currentPosition);
             swap(result,minimum,currentPosition);
         }
         return result;
@@ -32,7 +33,8 @@ public class SelectionSort implements Sorting {
         array[first] = array[second];
         array[second] = flag;
     }
-    private int minimumValueIndex(int[] array, int startIndex){
+
+    private int findIndexOfMinimumValue(int[] array, int startIndex){
         int minimumValue = array[startIndex];
         int minimumIndex = startIndex;
 

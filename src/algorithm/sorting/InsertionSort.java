@@ -26,7 +26,8 @@ public class InsertionSort implements Sorting{
     @Override
     public int[] sort(int[] initialList) {
         ArrayList<Integer> result = convertToArrayList(initialList);
-        for(int i=1;i<result.size();++i){
+
+        for(int i=1;i<initialList.length;++i){
             placeNumberInSortedSubList(result,i);
         }
         return convertToArray(result);
