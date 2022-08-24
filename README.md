@@ -8,3 +8,4 @@ With the Java programming language, famous data structures and algorithms in sof
 <b>Available Algorithms<b/>:<br/>
 1 - <b>BackTracking<b/> <br/>
 2 - <b>Sorting<b/><br/>
+3 - <b>Searching<b/><br/>
