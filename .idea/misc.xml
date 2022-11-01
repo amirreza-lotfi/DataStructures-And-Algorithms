@@ -6,4 +6,7 @@
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
+  </component>
 </project>
