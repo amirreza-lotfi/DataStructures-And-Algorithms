@@ -12,7 +12,9 @@ public class SelectionSort implements Sorting {
      *
      * Time Complexity : O(N^2)
      * Auxiliary Space : O(1)
-     *
+     * Stability: The default implementation is not stable. However, it can be made stable.
+     * Selection sort is an in-place sorting algorithm, which means it does not require any additional memory to sort the list.
+     * It is not a parallelizable algorithm, meaning that it cannot be easily split up to be run on multiple processors or cores.
      * @param initialList
      * @return sorted of initialList
      */
