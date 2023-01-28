@@ -16,6 +16,7 @@ public class BubbleSort implements Sorting{
      * The best-case condition for bubble sort occurs when elements of the array
      * are arranged in decreasing order -> O(N).
      *
+     * The bubble sort algorithm is stable and in-place but it is not adaptive.
      * @param initialList
      * @return sorted of initialList
      */

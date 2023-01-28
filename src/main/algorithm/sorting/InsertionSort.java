@@ -21,6 +21,7 @@ public class InsertionSort implements Sorting{
      *      worth case -> The array is sorted in reverse mode -> O(N^2)
      *
      * insertion sort is an in-place sorting algorithm.
+     * insertion sort is an adaptive sorting algorithm.
      *
      * @param initialList
      * @return sorted initialList
