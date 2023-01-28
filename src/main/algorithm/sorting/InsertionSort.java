@@ -16,6 +16,12 @@ public class InsertionSort implements Sorting{
      * so -> O(N+N^2) = O(N^2)
      * Auxiliary Space : O(1)
      *
+     * Time Complexity ->
+     *      best case -> The array is sorted -> O(N)
+     *      worth case -> The array is sorted in reverse mode -> O(N^2)
+     *
+     * insertion sort is an in-place sorting algorithm.
+     *
      * @param initialList
      * @return sorted initialList
      */
@@ -23,35 +29,43 @@ public class InsertionSort implements Sorting{
 
     @Override
     public int[] sort(int[] initialList) {
-        ArrayList<Integer> result = convertToArrayList(initialList);
+        int[] result = initialList.clone();
 
-        for(int i=1;i<initialList.length;++i){
-            placeNumberInSortedSubList(result,i);
+        for(int currentIndex = 0; currentIndex <initialList.length -1 ; ++currentIndex){
+            if(isCurrentValueBiggerThanNext(result, currentIndex)){
+                swapCurrentValueAndNext(result, currentIndex);
+                placeSmallerValueInSortedSubList(result,currentIndex);
+            }
         }
-        return convertToArray(result);
-    }
-
-    private ArrayList<Integer> convertToArrayList(int[] array){
-        ArrayList<Integer> result = new ArrayList<>(array.length);
-        for (int i=0;i<array.length;++i)
-            result.add(array[i]);
         return result;
     }
-    private int[] convertToArray(ArrayList<Integer> arrayList){
-        int[] a = new int[arrayList.size()];
-        for (int i=0;i<a.length;++i)
-            a[i] = arrayList.get(i);
-        return a;
+    private void swapCurrentValueAndNext(int[] array, int current){
+        int flag = array[current];
+        array[current] = array[current+1];
+        array[current+1] = flag;
     }
+    private boolean isCurrentValueBiggerThanNext(int[] array, int currentIndex){
+        return array[currentIndex]>array[currentIndex+1];
+    }
+    private void placeSmallerValueInSortedSubList(int []result, int currentIndex){
+        int current = currentIndex;
 
-    private void placeNumberInSortedSubList(ArrayList<Integer> result, int index){
-        for(int i=0;i<index;++i){
-            if(result.get(i) > result.get(index)){
-                int value = result.get(index);
-                result.remove(index);
-                result.add(i,value);
+        while (current!=0){
+            if(isCurrentValueSmallerThanBefore(result,current)){
+                swapCurrentValueAndBefore(result, current);
+                current--;
+            }else{
                 break;
             }
         }
+    }
+
+    private boolean isCurrentValueSmallerThanBefore(int[] array, int currentIndex){
+        return array[currentIndex]<array[currentIndex-1];
+    }
+    private void swapCurrentValueAndBefore(int[] array, int current){
+        int flag = array[current];
+        array[current] = array[current-1];
+        array[current-1] = flag;
     }
 }
