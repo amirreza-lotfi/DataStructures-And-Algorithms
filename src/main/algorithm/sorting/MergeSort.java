@@ -14,6 +14,11 @@ public class MergeSort implements Sorting {
      * TimeComplexity = O(nLog(n))
      * Auxiliary Space: O(n)
      *
+     * The Merge Sort is not in-place algorithm.
+     * The Merge Sort is not adaptive.
+     * The Merge Sort is parralelizable algorithm.
+     *
+     *
      * @param initialList
      * @return
      */
@@ -25,9 +30,9 @@ public class MergeSort implements Sorting {
     private int[] mergeSort(int[] initialList) {
         int half = initialList.length / 2;
         if (initialList.length == 2) {
-            int[] right = new int[]{initialList[0]};
-            int[] left = new int[]{initialList[1]};
-            return conquerRightAndLeft(right, left);
+            int[] right = new int[]{initialList[1]};
+            int[] left = new int[]{initialList[0]};
+            return conquerRightAndLeft(left,right);
         }else if(initialList.length==1){
             return initialList;
         }
@@ -41,24 +46,24 @@ public class MergeSort implements Sorting {
         return conquerRightAndLeft(sortedLeft, sortedRight);
     }
 
-    private int[] findRightSide(int half, int[] initialList) {
-        int[] right = new int[initialList.length - half - 1];
-        for (int i = half + 1, j = 0; i < initialList.length; i++, j++) {
+    public int[] findRightSide(int half, int[] initialList) {
+        int[] right = new int[initialList.length - half];
+        for (int i = half, j = 0; i < initialList.length; i++, j++) {
             right[j] = initialList[i];
         }
         return right;
     }
 
-    private int[] findLeftSide(int half, int[] initialList) {
-        int[] left = new int[half + 1];
-        for (int i = 0; i <= half; i++) {
+    public int[] findLeftSide(int half, int[] initialList) {
+        int[] left = new int[half];
+        for (int i = 0; i < half; i++) {
             left[i] = initialList[i];
         }
         return left;
     }
 
-    private int[] conquerRightAndLeft(int[] left, int[] right) {
-        int i = 0;
+    public int[] conquerRightAndLeft(int[] left, int[] right) {
+        int i;
         int iterateRightIndex = 0;
         int iterateLeftIndex = 0;
         int[] conqueredArray = new int[right.length + left.length];
