@@ -1,8 +1,9 @@
 package main.data_structure.hashing;
 
-import java.util.LinkedList;
+import main.data_structure.hashing.interfaces.ChainingHashing;
+import main.data_structure.hashing.interfaces.StaticHashing;
 
-public class ChainingHashTable implements StaticHashing {
+public class ChainingHashTable implements ChainingHashing, StaticHashing {
 
     /***
      In this hashing, collision solved by using chaining (linkedList).
@@ -16,6 +17,7 @@ public class ChainingHashTable implements StaticHashing {
         pockets = new Node[capacity];
     }
 
+    @Override
     public int hashFunction(int value) {
         return value % capacity;
     }
